@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fumigaciones WL</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <meta
+      name="description"
+      content="Cerrajería en Alderetes. Apertura sin daños, cambio de cerraduras, copias de llaves y emergencias 24/7. Contacto por WhatsApp."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Montserrat:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-sA+4Z0mP4wJY2QyhW9IuHVf1M1tYvYhOi/PGbF0h+3s="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="left-group">
+          <div class="logo" aria-label="Logo cerrajería">🕷 Fumgaciones WL</div>
+        </div>
+        <div class="right-group">
+          <nav class="nav" aria-label="Navegación principal" id="primary-nav">
+            <a href="#servicios">Servicios</a>
+            <a href="#ubicacion">Ubicación</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto" class="btn-primary">Contacto</a>
+          </nav>
+          <div class="controls">
+            <button
+              id="theme-toggle"
+              aria-label="Cambiar tema"
+              class="theme-btn"
+            >
+              <span class="icon-sun" aria-hidden="true">🌞</span>
+              <span class="icon-moon" aria-hidden="true" style="display: none"
+                >🌙</span
+              >
+            </button>
+            <button
+              id="menu-toggle"
+              aria-label="Abrir menú"
+              class="hamburger"
+              aria-expanded="false"
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- mobile nav dropdown -->
+      <div class="mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+        <a href="#servicios">Servicios</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto" class="btn-primary">Contacto</a>
+      </div>
+    </header>
+
+    <!-- Hero slider -->
+    <section class="hero" aria-label="Sección principal">
+      <div class="hero-slider">
+        <div
+          class="slide active"
+          style="
+            background-image: url('https://media.istockphoto.com/id/1459020348/es/foto/exterminador-en-el-trabajo-rociando-pesticidas-o-insecticidas-con-pulverizador.jpg?s=612x612&w=0&k=20&c=Su0-ZOE3eq4x1mc5EXej-_poCYIJ-ZQywuxKssWyWLQ=');
+          "
+        >
+          <div class="overlay"></div>
+          <div class="hero-content">
+            <h1>Servicio de Fumgaciones 24/7 en Tucuman</h1>
+            <p>
+              Rápido, profesional y sin sorpresas. Llegamos cuando nos
+              necesitás.
+            </p>
+            <a href="#contacto" class="btn-primary">Contactar por WhatsApp</a>
+          </div>
+        </div>
+        <div
+          class="slide"
+          style="
+            background-image: url('https://previews.123rf.com/images/jackf/jackf1703/jackf170305340/74723546-huge-range-of-car-key-duplicates-at-display-in-locksmith.jpg');
+          "
+        >
+          <div class="overlay"></div>
+          <div class="hero-content">
+            <h1>Apertura sin daños</h1>
+            <p>
+              Puertas residenciales y comerciales, sin comprometer tu seguridad.
+            </p>
+            <a href="#servicios" class="btn-primary">Ver servicios</a>
+          </div>
+        </div>
+      </div>
+      <div class="slider-dots" aria-label="Controles del slider">
+        <button data-index="0" class="dot active" aria-label="Slide 1"></button>
+        <button data-index="1" class="dot" aria-label="Slide 2"></button>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Qué hacemos</h2>
+            <p class="subtitle">
+              Servicios profesionales para tu hogar o negocio en Alderetes.
+            </p>
+          </div>
+        </div>
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="icon">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2a7 7 0 0 0-7 7c0 1.657.672 3.157 1.758 4.242L3 17v4h4l3-3h2l5-5a7 7 0 1 0-5-11zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"
+                />
+              </svg>
+            </div>
+            <h3>Apertura sin daños</h3>
+            <p>
+              Accedé a tu propiedad sin romper nada, con técnica precisa y
+              respaldo profesional.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M17 8h-1V6a4 4 0 1 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V6zm7 12H7v-8h10v8z"
+                />
+              </svg>
+            </div>
+            <h3>Cambio e instalación</h3>
+            <p>
+              Reemplazo de cerraduras, instalación y refuerzo de seguridad con
+              garantía.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M9 2a7 7 0 0 0-7 7c0 1.8.676 3.452 1.795 4.728L2 17v5h5l4-4h2l6-6a7 7 0 1 0-5-11zm0 2a5 5 0 0 1 5 5v1H9v-1a5 5 0 0 1 0-10z"
+                />
+              </svg>
+            </div>
+            <h3>Copias de llaves</h3>
+            <p>
+              Duplicados exactos al instante: tradicionales, de seguridad y
+              modernas.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 1a11 11 0 1 0 11 11A11.013 11.013 0 0 0 12 1zm0 2a9 9 0 1 1-9 9 9.01 9.01 0 0 1 9-9zm.5 3h-1v6l5.25 3.15.5-.86-4.75-2.79z"
+                />
+              </svg>
+            </div>
+            <h3>Emergencias 24/7</h3>
+            <p>Siempre disponibles. Llegamos rápido cuando más lo necesitás.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ubicacion" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Ubicación & Contacto</h2>
+            <p class="subtitle">
+              Encontranos fácilmente y chateá con nosotros al instante.
+            </p>
+          </div>
+        </div>
+        <div class="map-contact">
+          <div class="iframe-wrapper" aria-label="Mapa de ubicación">
+            <iframe
+              title="Mapa de Cerrajería Alderetes"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3343.89818944437!2d-65.24719068479516!3d-26.775953483161355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9423f9f0f0b8d7b7%3A0x0!2sAlderetes%2C%20Tucum%C3%A1n%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1701700000000"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="info-box">
+            <h3>Cerrajería Alderetes</h3>
+            <p><strong>Dirección:</strong> Alderetes, Tucumán, Argentina</p>
+            <p>
+              <strong>Teléfono / WhatsApp:</strong>
+              <a id="wsp-link" href="#" target="_blank">Chatear ahora</a>
+            </p>
+            <p><strong>Horario:</strong> 24/7</p>
+            <div class="tags">
+              <span class="tag">Respuesta rápida</span>
+              <span class="tag">Técnicos certificados</span>
+            </div>
+            <a class="btn-primary" id="wsp-cta" href="#" target="_blank"
+              >Enviar WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Galería</h2>
+            <p class="subtitle">
+              Algunas de nuestras intervenciones y herramientas.
+            </p>
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img
+              alt="Trabajo cerrajería 1"
+              src="https://previews.123rf.com/images/jackf/jackf1703/jackf170305340/74723546-huge-range-of-car-key-duplicates-at-display-in-locksmith.jpg"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              alt="Trabajo cerrajería 2"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAI5KbiP-SfDTSn0yJIb06wUX9VTkN9QQb5Q&s"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              alt="Herramientas cerrajería"
+              src="https://www.cerrajeriaplacer.com/images/quienes-somos/especialistas-en-duplicado-llaves-sin-muestra.jpg"
+              loading="lazy"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              alt="Servicio a domicilio"
+              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Testimonios</h2>
+            <p class="subtitle">Lo que dicen nuestros clientes satisfechos.</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="photo">
+            <img
+              alt="Cliente"
+              src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=80&q=80"
+              loading="lazy"
+            />
+          </div>
+          <div class="text">
+            <p>
+              "Me dejaron la puerta como nueva sin romper nada. Llegaron en
+              menos de 20 minutos y el precio fue claro desde el inicio."
+            </p>
+            <div class="author">— María López, Alderetes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <div class="logo">🔐 Cerrajería Alderetes</div>
+          <p>Servicio profesional, rápido y confiable. Disponible 24/7.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Enlaces</h4>
+            <ul>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#ubicacion">Ubicación</a></li>
+              <li><a href="#galeria">Galería</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contacto</h4>
+            <ul>
+              <li><a href="#" id="footer-wsp">WhatsApp</a></li>
+              <li><span>Horario: 24/7</span></li>
+              <li><span>Alderetes, Tucumán</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Confianza</h4>
+            <ul>
+              <li><span>Garantía</span></li>
+              <li><span>Técnicos capacitados</span></li>
+              <li><span>Presupuesto previo</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div>
+          &copy; <span id="year"></span> Cerrajería Alderetes. Todos los
+          derechos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp flotante -->
+    <a
+      class="whatsapp-float"
+      id="whatsapp-float"
+      aria-label="Chatear por WhatsApp"
+      target="_blank"
+      href="#"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16.003 3.2c-7.05 0-12.8 5.75-12.8 12.8 0 2.256.59 4.469 1.706 6.431L3.2 29.6l7.529-2.004a12.676 12.676 0 0 0 5.274 1.18h.001c7.05 0 12.8-5.75 12.8-12.8s-5.75-12.8-12.8-12.8zm6.834 17.544c-.297.83-1.716 1.589-2.402 1.67-.643.075-1.44.107-2.236-.084-1.904-.406-3.434-1.49-5.194-2.941-1.513-1.271-2.507-2.897-2.915-4.512-.248-1.036-.291-2.142.037-3.153.27-.854 1.025-1.395 1.823-1.57.576-.134 1.256-.17 1.89-.17.604 0 1.207.01 1.777.044.61.037 1.006.056 1.46-.117.372-.147.675-.413.95-.694.64-.65 1.166-1.494 1.64-2.337.18-.35.345-.675.6-.941.461-.451 1.086-.312 1.437.217.33.5.69 1.08.94 1.624.38.858.611 1.758.755 2.68.138.887.037 1.71-.36 2.484-.35.696-.905 1.317-1.5 1.807-.41.33-.883.623-1.344.927-.4.27-.78.53-1.14.817-.532.44-1.032.9-1.47 1.412-.208.248-.38.53-.372.843.01.427.38.73.795.783.46.06.93.03 1.384-.027.508-.063 1.007-.162 1.494-.298.682-.186 1.336-.465 1.992-.783.132-.06.265-.12.4-.18.533-.237 1.14-.01 1.387.519.23.496.44 1.012.626 1.528.117.315.223.638.316.965.089.312.1.653-.053.947z"
+        />
+      </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-vmRjGgXg9TnJQfXbE7xwM6rgLgsbXbYlZ9gX+4uH0kM="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
